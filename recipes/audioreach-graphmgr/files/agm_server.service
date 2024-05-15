@@ -1,0 +1,20 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+[Unit]
+Description=Agm Server Init
+
+[Service]
+Type=dbus
+User=root
+Group=root
+BusName=org.Qti.AgmService
+SystemdService=dbus-org.Qti.AgmService.service
+Restart=always
+ExecStartPre=/bin/sleep 7
+ExecStart=/usr/bin/agm_server -s
+ExecReload=/usr/bin/agm_server -r
+NotifyAccess=main
+
+[Install]
+WantedBy=multi-user.target
