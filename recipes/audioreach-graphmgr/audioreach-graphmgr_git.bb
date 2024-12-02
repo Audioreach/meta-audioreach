@@ -26,5 +26,6 @@ SYSTEMD_SERVICE:${PN} = "agm_server.service"
 RM_WORK_EXCLUDE += "${PN}"
 
 PACKAGECONFIG[are_on_apps] = "--with-are-on-apps, --without-are-on-apps, audioreach-engine"
+PACKAGECONFIG[use_default_acdb_path] = "--with-use-default-acdb-path, --without-use-default-acdb-path"
 
 inherit autotools pkgconfig
