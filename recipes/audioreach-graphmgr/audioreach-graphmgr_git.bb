@@ -25,4 +25,6 @@ do_install:append () {
 SYSTEMD_SERVICE:${PN} = "agm_server.service"
 RM_WORK_EXCLUDE += "${PN}"
 
+PACKAGECONFIG[are_on_apps] = "--with-are-on-apps, --without-are-on-apps, audioreach-engine"
+
 inherit autotools pkgconfig
