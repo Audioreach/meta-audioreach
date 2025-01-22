@@ -11,6 +11,8 @@ SRC_URI = "git://github.com/Audioreach/audioreach-conf.git;protocol=https;branch
 
 S = "${WORKDIR}/git"
 
+PACKAGECONFIG[qcom] = "--with-qcom, --without-qcom"
+
 inherit autotools pkgconfig
 
 do_compile[noexec] = "1"
