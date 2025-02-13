@@ -24,5 +24,8 @@ OECMAKE_GENERATOR = "Unix Makefiles"
 
 DEPENDS = "glib-2.0 audioreach-graphservices tinyalsa"
 
-SOLIBS = ".so"
+SOLIBS = ".so*"
 FILES_SOLIBSDEV = ""
+INSANE_SKIP:${PN} = "dev-so"
+
+FILES:${PN} += "${libdir}/*${SOLIBS}"
