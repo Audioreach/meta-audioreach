@@ -16,6 +16,7 @@ SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
 
 PACKAGECONFIG[qcom] = "--with-qcom, --without-qcom, audioreach-kernel"
+PACKAGECONFIG[are_on_apps] = "--with-are-on-apps, --without-are-on-apps"
 
 inherit autotools pkgconfig
 RRECOMMENDS:${PN} = " \
