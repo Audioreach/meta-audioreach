@@ -22,7 +22,18 @@ git clone https://github.com/Audioreach/meta-audioreach.git
 - Find local.conf. Likely to be present at this path <path_to_openEmbdded_build>/conf/conf/local.conf.
 - Append line:
 ```
-IMAGE_INSTALL:append = "audioreach-kernel audioreach-graphservices tinyalsa audioreach-graphmgr"
+IMAGE_INSTALL:append = "audioreach-graphservices tinyalsa audioreach-graphmgr audioreach-engine audioreach-conf"
+```
+
+* For Qualcomm reference board, use below to include audioreach-kernel recipe:
+```
+IMAGE_INSTALL:append = "audioreach-kernel audioreach-graphservices tinyalsa audioreach-graphmgr audioreach-engine audioreach-conf"
+```
+
+* Append below to local.conf to enable support for ARE (AudioReach Engine) on APPS processor.
+```
+PACKAGECONFIG:pn-audioreach-graphmgr = "are_on_apps use_default_acdb_path"
+PACKAGECONFIG:pn-audioreach-graphservices = "are_on_apps"
 ```
 
 ### Kick-off build process
